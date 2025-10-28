@@ -1,11 +1,42 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Contact — Sulwe</title>
     <link rel="stylesheet" href="assets/stylesheets/main.css">
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      (function() {
+        // Initialize EmailJS
+        emailjs.init("NAj-hP1cBQwIVoVIo"); // public key
+      })();
+
+      function sendMail(event) {
+        event.preventDefault();
+
+        const btn = document.querySelector(".btn-alt");
+        btn.disabled = true;
+        btn.textContent = "Sending...";
+
+        emailjs.sendForm('service_bu10r3p', 'template_zydsjn8', event.target)
+          .then(() => {
+            alert('Message sent successfully!');
+            event.target.reset();
+            btn.disabled = false;
+            btn.textContent = "Send Message";
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+            alert('Something went wrong. Please try again later.');
+            btn.disabled = false;
+            btn.textContent = "Send Message";
+          });
+      }
+    </script>
   </head>
+
   <body class="contact-body">
     <div class="contact-container">
       <section class="contact-hero">
@@ -14,9 +45,9 @@
         Drop me a message below — I’ll get back to you soon.</p>
       </section>
 
-      <form class="contact-form" action="mailto:kodongochieng@gmail.com" method="post" enctype="text/plain">
+      <form class="contact-form" onsubmit="sendMail(event)">
         <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        <input type="email" id="email" name="from_email" placeholder="you@example.com" required>
 
         <label for="subject">Subject</label>
         <input type="text" id="subject" name="subject" placeholder="Let’s build something..." required>
