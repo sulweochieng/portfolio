@@ -1,24 +1,3 @@
 {
-  "redirects": [
-    {
-      "source": "/home",
-      "destination": "/index.html",
-      "permanent": true
-    },
-    {
-      "source": "/about",
-      "destination": "/about.html",
-      "permanent": true
-    },
-    {
-      "source": "/contact",
-      "destination": "/contact.html",
-      "permanent": true
-    },
-    {
-      "source": "/portfolio",
-      "destination": "/skills.html",
-      "permanent": true
-    }
-  ]
+  "cleanUrls": true
 }
