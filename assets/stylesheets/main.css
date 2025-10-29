@@ -212,11 +212,20 @@ header {
    Responsive Enhancements for Index Page
    ======================================== */
 @media (max-width: 768px) {
+  body.index-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* centers vertically */
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+  }
+
   /* Make container adapt beautifully */
   .index-container {
     width: 90%; /* narrower margins */
     padding: 30px 20px;
-    margin: 5vh auto; /* center vertically & horizontally */
+    margin: 0 auto; /* center vertically & horizontally */
     max-width: none; /* remove fixed limit for smaller screens */
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -242,18 +251,20 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
-    border-bottom: 1px solid rgba(255, 215, 0, 0.4); /* soft gold accent */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    /*border-bottom: 1px solid rgba(255, 215, 0, 0.4); */
     padding: 10px 0;
   }
 
   .primary-nav a {
     color: #d4af37; /* gold links */
     font-weight: 600;
+    transition: color 0.3s ease;
   }
 
   .primary-nav a:hover,
   .primary-nav a.active-index {
-    color: #fff; /* white on hover for nice contrast */
+    color: #fff !important; /* ensure override */
   }
 
   /* Footer alignment */
@@ -275,6 +286,11 @@ header {
     display: inline-block;
     margin: 0 8px;
   }
+  .index-footer {
+  margin-top: auto;
+  padding-bottom: 20px;
+  }
+
 }
 
 /* ================================
