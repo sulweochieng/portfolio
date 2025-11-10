@@ -36,8 +36,6 @@ Each page is uniquely crafted for clarity, harmony, and responsiveness.
 - **CSS3** (Flexbox + Grid + Responsive design)  
 - **JavaScript** (light interactivity)  
 - **SVG Icons** and **minimal animations**
-- **Flask backend for dynamic content
-
 ---
 
 ## 🖌️ Design Principles
