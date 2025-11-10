@@ -1118,3 +1118,176 @@ a:hover {
     justify-content: center;
   }
 }
+
+/* ========================================
+   Elegant Glassy Modal (Gold Theme)
+   ======================================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: opacity 0.3s ease;
+}
+
+/* Frosted-glass modal box */
+.modal-content {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  margin: 6% auto;
+  padding: 30px 40px;
+  width: 90%;
+  max-width: 650px;
+  color: #f5f5f5;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  animation: popIn 0.4s ease;
+  background-image: url('assets/images/site/List-bg.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Smooth pop animation */
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ========== Text Styling ========== */
+.modal-content h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #d4af37; /* Gold */
+  border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+  padding-bottom: 8px;
+}
+
+.modal-content h4 {
+  margin-top: 20px;
+  color: #d4af37;
+  font-weight: 600;
+}
+
+.modal-content ul {
+  margin-top: 8px;
+  padding-left: 22px;
+  line-height: 1.7;
+  color: #f0f0f0;
+}
+
+/* ========== Close Button ========== */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #d4af37;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+.close:hover {
+  transform: rotate(90deg);
+  color: #fff;
+}
+
+/* ========================================
+   Hoverable List Item — True Glass Fade
+   ======================================== */
+.hover-item {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.4s ease, background 0.4s ease;
+}
+
+/* Gentle lift and slight brightness */
+.hover-item:hover {
+  transform: translateY(-2px);
+}
+
+/* Smooth glass overlay effect */
+.hover-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(225, 225, 225, 0.15);
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  opacity: 0;
+  border-radius: inherit;
+  transition: opacity 0.45s ease, backdrop-filter 0.6s ease;
+  z-index: 1;
+}
+
+.hover-item:hover::before {
+  opacity: 1;
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+}
+
+/* Dim content text gracefully under glass */
+.hover-item .list-content {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+.hover-item:hover .list-content {
+  opacity: 0.2; /* not gone, just softened */
+  filter: blur(1.5px);
+}
+
+/* "View" text overlay — smooth fade-in gold */
+.hover-item .view-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d4af37;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  z-index: 3;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  background: rgba(255, 255, 255, 0.05); /* subtle light layer */
+  border-radius: inherit;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hover-item:hover .view-btn {
+  opacity: 1;
+  transform: scale(1.03);
+}
+/* ========== Responsive ========== */
+@media (max-width: 600px) {
+  .modal-content {
+    width: 92%;
+    margin: 20% auto;
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+}
