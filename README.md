@@ -60,5 +60,6 @@ I’d like to express my gratitude to everyone who inspired, guided, and support
 |------|------|---------------|
 | [Ochieng' Sulwe](https://github.com/ochiengsulwe) | Creator & Developer | Design, Development, Content |
 | [Arnold Oduma](https://github.com/ArnoldOduma) | Reviewer | UI Review, Feedback |
+| [Hassan Mogeni](https://www.linkedin.com/in/hassan-mogeni-b83261312/) | Reviewer | UI Review, Feedback |
 
 ---
