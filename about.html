@@ -81,35 +81,53 @@
           <div class="column academics">
               <h2 class="about-h2">Academic History</h2>
               <ul class="qualifications">
-                  <li>
-                      <strong>B.Sc. in Applied Physics</strong> (Ongoing)<br>
-                      <span class="institution">University of Nairobi</span><br>
-                      <span class="duration">2025 – Present</span>
+                  <li class="hover-item" data-modal="modal-physics">
+                      <div class="list-content">
+                          <strong>B.Sc. in Applied Physics</strong> (Ongoing)<br>
+                          <span class="institution">University of Nairobi</span><br>
+                          <span class="duration">2025 – Present</span>
+                      </div>
+                      <div class="view-btn" data-modal="modal-physics">View</div>
                   </li>
-                  <li>
-                      <strong>Software Engineering</strong><br>
-                      <span class="institution">ALX Africa</span><br>
-                      <span class="duration">2022 – 2023</span>
+                  <li class="hover-item" data-modal="modal-alx">
+                      <div class="list-content">
+                          <strong>Software Engineering</strong><br>
+                          <span class="institution">ALX Africa</span><br>
+                          <span class="duration">2022 – 2023</span>
+                      </div>
+                      <div class="view-btn" data-modal="modal-alx">View</div>
                   </li>
-                  <li>
-                      <strong>Web Development</strong><br>
-                      <span class="institution">eMobilis Technology Training Institute</span><br>
-                      <span class="duration">2022 – 2022</span>
+                  <li class="hover-item" data-modal="modal-emobilis">
+                      <div class="list-content">
+                          <strong>Web Development</strong><br>
+                          <span class="institution">eMobilis Technology Training Institute</span><br>
+                          <span class="duration">2022 – 2022</span>
+                      </div>
+                      <div class="view-btn" data-modal="modal-emobilis">View</div>
                   </li>
-                  <li>
-                      <strong>Cloud Computing</strong><br>
-                      <span class="institution">Azubi Africa</span><br>
-                      <span class="duration">2022 – 2022</span>
+                  <li class="hover-item" data-modal="modal-azubi">
+                      <div class="list-content">
+                          <strong>Cloud Computing</strong><br>
+                          <span class="institution">Azubi Africa</span><br>
+                          <span class="duration">2022 – 2022</span>
+                      </div>
+                      <div class="view-btn" data-modal="modal-azubi">View</div>
                   </li>
-                  <li>
-                      <strong>B.Sc. Architecture</strong> (Dropped-out)<br>
-                      <span class="institution">University of Pretoria</span><br>
-                      <span class="duration">2019 – 2020</span>
+                  <li class="hover-item" data-modal="modal-pretoria">
+                      <div class="list-content">
+                          <strong>B.Sc. Architecture</strong> (Dropped-out)<br>
+                          <span class="institution">University of Pretoria</span><br>
+                          <span class="duration">2019 – 2020</span>
+                      </div>
+                      <div class="view-btn" data-modal="modal-pretoria">View</div>
                   </li>
-                  <li>
-                      <strong>B.Sc. Quantity Surveying</strong> (Inter-Faculty Transfer)<br>
-                      <span class="institution">University of Nairobi</span><br>
-                      <span class="duration">2015 – 2018</span>
+                  <li class="hover-item" data-modal="modal-qs">
+                      <div class="list-content">
+                          <strong>B.Sc. Quantity Surveying</strong> (Inter-Faculty Transfer)<br>
+                          <span class="institution">University of Nairobi</span><br>
+                          <span class="duration">2015 – 2018</span>
+                      </div>
+                      <div class="view-btn" data-modal="modal-qs">View</div>
                   </li>
               </ul>
           </div>
@@ -225,6 +243,193 @@
       </section>
 
       <!-- MODAL CONTENT -->
+      <!-- ===========================
+          ACADEMIC MODALS
+          =========================== -->
+      <!-- B.Sc. in Applied Physics -->
+      <div id="modal-physics" class="modal academic-modal">
+          <div class="modal-content small-modal">
+              <span class="close">&times;</span>
+              <h3>B.Sc. in Applied Physics — University of Nairobi</h3>
+
+              <h4>Core Learning Areas</h4>
+              <ul>
+                  <li>1. Classical and quantum mechanics – motion, wave–particle duality, and energy quantization.</li>
+                  <li>2. Electromagnetism and electronics – circuit theory, field dynamics, and semiconductor devices.</li>
+                  <li>3. Mathematical methods for physics – differential equations, vector calculus, and numerical analysis.</li>
+                  <li>4. Thermodynamics and statistical mechanics – energy transfer, entropy, and molecular systems.</li>
+                  <li>5. Optics and photonics – light behavior, interference, diffraction, and laser systems.</li>
+                  <li>6. Instrumentation and control systems – sensors, data acquisition, and automation interfaces.</li>
+                  <li>7. Computational physics – simulation and modeling using Python, MATLAB, and C/C++.</li>
+                  <li>8. Microprocessor systems and embedded programming</li>
+                  <li>9. Instrumentation and sensor interfacing principles</li>
+                  <li>10. Digital signal processing and circuit design</li>
+              </ul>
+
+              <h4>Tools & Competencies</h4>
+              <ul>
+                  <li>1. Design and calibration of laboratory instrumentation and microcontroller-based systems.</li>
+                  <li>2. Data collection, signal processing, and visualization using scientific programming tools.</li>
+                  <li>3. Practical grounding in circuit design, analog/digital electronics, and embedded systems.</li>
+                  <li>4. Mathematical modeling and simulation of physical systems in applied research contexts.</li>
+                  <li>5. Scientific reporting, error analysis, and quantitative reasoning for experimental results.</li>
+                  <li>6. Collaborative laboratory work, technical documentation, and innovation project management.</li>
+                  <li>7. PCB Design and Oscilloscope diagnostics</li>
+              </ul>
+
+              <h4>Focus & Application</h4>
+              <ul>
+                  <li>1. Currently specializing in <strong>Quantum Computing</strong>, <strong>Embedded Systems</strong>, <strong>Artificial Intelligence</strong>, <strong>Microelectronics</strong>, and <strong>Computer Engineering</strong>, focusing on how physical systems and intelligent computation intersect to drive next-generation technologies.</li>
+
+                  <li>2. Exploring applications in biomedical instrumentation, IoT-based monitoring, and wearable health technologies.</li>
+              </ul>
+          </div>
+      </div>
+      <!-- ALX Africa -->
+      <div id="modal-alx" class="modal academic-modal">
+          <div class="modal-content small-modal">
+              <span class="close">&times;</span>
+              <h3>Software Engineering — ALX Africa</h3>
+
+              <h4>Core Learning Areas</h4>
+              <ul>
+                  <li>1. Programming fundamentals and problem-solving using C, Python, and JavaScript.</li>
+                  <li>2. Data structures and algorithms — arrays, linked lists, trees, recursion, and complexity analysis.</li>
+                  <li>3. System engineering — Linux command line, shell scripting, and process management.</li>
+                  <li>4. Networking principles, API development, and client–server communication models.</li>
+                  <li>5. Version control, collaboration, and documentation using Git, GitHub, and Markdown.</li>
+                  <li>6. Agile methodologies and peer-driven learning through project sprints and code reviews.</li>
+                  <li>7. Full-stack web development (HTML, CSS, JS, Python Flask)</li>
+                  <li>8. Systems design, REST API development, and microservices</li>
+              </ul>
+
+              <h4>Tools & Competencies Developed</h4>
+              <ul>
+                  <li>1. Proficiency in Git/GitHub for version control and collaboration.</li>
+                  <li>2. Development of RESTful APIs and full-stack web applications using Flask and Node.js.</li>
+                  <li>3. Hands-on experience with relational databases (MySQL, SQLite) and ORM concepts.</li>
+                  <li>4. Problem-solving under constraints through algorithmic challenges and debugging exercises.</li>
+                  <li>5. Application deployment using Docker and Linux servers.</li>
+                  <li>6. Team communication, documentation, and project management using Agile and Scrum frameworks.</li>
+              </ul>
+
+              <h4>Key Takeaways</h4>
+              <ul>
+                  <li>1. Acquired strong software design and engineering fundamentals applicable across domains.</li>
+                  <li>2. Developed self-directed learning, leadership, and peer-mentorship skills through the ALX community model.</li>
+                  <li>3. Built and deployed portfolio-ready software projects demonstrating real-world problem-solving.</li>
+              </ul>
+
+              <h4>Transition & Future Focus</h4>
+              <ul>
+                  <li>1. The ALX Software Engineering program provided a solid foundation in computational thinking, systems design, and algorithmic problem-solving.</li>
+                  <li>2. Through building and deploying full-stack systems, I developed a deep interest in how software interfaces with hardware and physical systems.</li>
+                  <li>3. This experience inspired my current academic focus in <strong>Quantum Computing</strong>, <strong>Embedded Systems</strong>, <strong>Artificial Intelligence</strong>, <strong>Microelectronics</strong>, and <strong>Computer Engineering</strong>.</li>
+                  <li>4. The transition from <strong>Quantity Surveying</strong> to <strong>Applied Physics</strong> was a natural step toward aligning my technical passions with modern interdisciplinary innovation.</li>
+              </ul>
+          </div>
+      </div>
+      <!-- Web Development – eMobilis -->
+      <div id="modal-emobilis" class="modal modal-academic">
+          <div class="modal-content">
+              <span class="close">&times;</span>
+              <h3>Web Development – eMobilis Technology Training Institute</h3>
+
+              <h4>Core Learning Areas</h4>
+              <ul>
+                  <li>1. Front-end fundamentals – HTML5, CSS3, and JavaScript for responsive user interfaces.</li>
+                  <li>2. Back-end logic – introduction to PHP and MySQL for database-driven applications.</li>
+                  <li>3. Version control and collaboration – Git and GitHub for code management.</li>
+                  <li>4. UI/UX principles – design structure, accessibility, and cross-platform consistency.</li>
+                  <li>5. Deployment and hosting – basics of domain management and web server configuration.</li>
+              </ul>
+
+              <h4>Tools & Competencies Developed</h4>
+              <ul>
+                  <li>1. Proficiency in crafting and styling modern, responsive web layouts.</li>
+                  <li>2. Experience integrating front-end interfaces with database-backed systems.</li>
+                  <li>3. Use of VS Code, Git, and browser developer tools for debugging and version tracking.</li>
+                  <li>4. Understanding of the software development lifecycle from design to deployment.</li>
+                  <li>5. Practical collaboration through Git-based workflows and code reviews.</li>
+              </ul>
+
+              <h4>Focus & Application</h4>
+              <ul>
+                   <li>Laid groundwork for my advanced studies in software engineering and system design.</li>
+              </ul>
+          </div>
+      </div>
+      <!-- Cloud Computing -->
+      <div id="modal-azubi" class="modal modal-academic">
+          <div class="modal-content">
+              <span class="close">&times;</span>
+              <h3>Cloud Computing – Azubi Africa</h3>
+
+              <h4>Core Learning Areas</h4>
+              <ul>
+                  <li>1. Fundamentals of cloud architecture, including IaaS, PaaS, and SaaS models.</li>
+                  <li>2. Deployment, configuration, and management of virtual servers, storage, and networking resources.</li>
+                  <li>3. Cloud security principles — identity and access management, encryption, and shared responsibility model.</li>
+                  <li>4. Monitoring, scaling, and automation using cloud-native tools and APIs.</li>
+                  <li>5. Cost optimization, resource tagging, and performance management across distributed systems.</li>
+                  <li>6. Introduction to DevOps concepts and CI/CD workflows in cloud environments.</li>
+              </ul>
+
+              <h4>Tools & Competencies Developed</h4>
+              <ul>
+                  <li>1. Hands-on experience with AWS cloud services.</li>
+                  <li>2. Working knowledge of Docker containers and basic Kubernetes orchestration.</li>
+                  <li>3. Use of command-line interfaces and SDKs for resource management.</li>
+                  <li>4. Familiarity with Git, GitHub Actions, and version control workflows.</li>
+                  <li>5. Configuration of cloud-based databases, storage buckets, and networking layers.</li>
+                  <li>6. Cloud security auditing and compliance awareness.</li>
+              </ul>
+
+              <h4>Key Takeaways</h4>
+              <ul>
+                  <li>1. Gained a strong foundation in scalable, reliable cloud infrastructure design.</li>
+                  <li>2. Developed confidence in deploying real-world cloud-based applications and services.</li>
+                  <li>3. Built a foundation for integrating cloud computing with IoT, data analytics, and software engineering projects.</li>
+              </ul>
+          </div>
+      </div>
+      <!-- University of Pretoria -->
+      <div id="modal-pretoria" class="modal academic-modal">
+          <div class="modal-content small-modal">
+              <span class="close">&times;</span>
+              <h3>B.Sc. Architecture — University of Pretoria</h3>
+
+              <h4>Reason for Discontinuation</h4>
+              <p>Discontinued program due to the COVID-19 pandemic, as I was not allowed
+                  to leave the Country(Kenya) for South Africa at the time.</p>
+          </div>
+      </div>
+      <!-- Quantity Surveying -->
+      <div id="modal-qs" class="modal academic-modal">
+          <div class="modal-content small-modal">
+              <span class="close">&times;</span>
+              <h3>BSc. Quantity Surveying - University of Nairobi</h3>
+
+              <h4>Core Learning Areas</h4>
+              <ul>
+                  <li>1. Construction economics, cost estimation, and project budgeting.</li>
+                  <li>2. Measurement and quantification of works using Standard Methods of Measurement (SMM, CESMM).</li>
+                  <li>3. Construction technology — understanding materials, structural systems, and sustainability principles.</li>
+                  <li>4. Project management methodologies, scheduling, and risk analysis.</li>
+              </ul>
+
+              <h4>Tools & Competencies Developed</h4>
+              <ul>
+                  <li>1. Cost planning and value engineering for both building and civil works.</li>
+                  <li>2. Data analysis and reporting using Excel and project management tools (MS Project, Primavera P6).</li>
+                  <li>3. Quantitative reasoning, documentation, and client communication skills.</li>
+              </ul>
+
+              <h4>Reason for Inter-Faculty Transfer</h4>
+              <p>Transferred to Applied Physics to pursue a stronger technical and innovation-driven foundation integrating engineering principles with digital system design.</p>
+          </div>
+      </div>
+
       <!-- Hult Prize -->
       <div id="modal-hult" class="modal">
           <div class="modal-content">
