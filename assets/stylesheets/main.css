@@ -1183,7 +1183,7 @@ a:hover {
 .modal-section:hover {
   transform: translateY(-6px); /* smooth lift */
   /*box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 215, 0, 0.15); /* deep shadow + gold glow */
-  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4), /* golden glow below */
+  box-shadow: 0 12px 20px rgba(255, 215, 0, 0.4), /* golden glow below */
               0 8px 20px rgba(0, 0, 0, 0.5); /* keep depth contrast */
   background: rgba(40, 40, 40, 0.75); /* slightly lighter on hover */
 }
