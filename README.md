@@ -6,7 +6,7 @@ It serves as both a professional presentation and an experimental playground whe
 ---
 
 ## 🌐 Live Preview
-**[Visit Portfolio →](https://sulwe.tech)**
+**[Visit Portfolio →](https://sulwe.vercel.app/)**
 
 ---
 
@@ -62,7 +62,7 @@ The **landing page** and **closing (contact) page** are intentionally dark, repr
 ---
 
 ### 🛏️ The Landing Page
-The landing page features a background photo of my bed — beside it lie my favorite play, *The Government Inspector* by **Nikolai Gogol**, a **watch**, and a **Yale cap**.  
+The landing page features a background photo of my bed — on it lie my favorite play, *The Government Inspector* by **Nikolai Gogol**, a **watch**, and a **Yale cap**.  
 Together, they symbolize my immersion in reading and learning, while staying mindful of balance — between time, rest, and curiosity.
 
 ---
@@ -108,7 +108,8 @@ You can view the concept sketches below to see how each page came to life:
 
 <p align="center">
   <img src="assets/images/site/portfolio.jpeg" alt="Portfolio Page Sketch" width="500"/><br>
-  <em>Portfolio Page Sketch — early vision of the sticky note design.</em>
+  <em>Portfolio Page Sketch — early vision of the sticky note design and the project
+  panels.</em>
 </p>
 
 ---
