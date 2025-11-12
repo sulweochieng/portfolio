@@ -1181,8 +1181,10 @@ a:hover {
 }
 
 .modal-section:hover {
-  transform: translateY(-4px); /* smooth lift */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 215, 0, 0.15); /* deep shadow + gold glow */
+  transform: translateY(-6px); /* smooth lift */
+  /*box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 215, 0, 0.15); /* deep shadow + gold glow */
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4), /* golden glow below */
+              0 8px 20px rgba(0, 0, 0, 0.5); /* keep depth contrast */
   background: rgba(40, 40, 40, 0.75); /* slightly lighter on hover */
 }
 
@@ -1194,6 +1196,23 @@ a:hover {
     color: #FFD700;
     text-shadow: 0 0 6px rgba(255, 215, 0, 0.3);
 }
+/*
+.modal-section::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0; right: 0; bottom: -8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 215, 0, 0.25);
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.modal-section:hover::after {
+  opacity: 1;
+}
+*/
 .modal-content p,
 .modal-content ul li {
   text-align: justify; /* Aligns both left & right edges */
