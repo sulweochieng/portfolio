@@ -1169,6 +1169,49 @@ a:hover {
 }
 
 /* ========== Text Styling ========== */
+.modal-section {
+  background: rgba(30, 30, 30, 0.6); /* dark translucent background */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.modal-section:hover {
+  transform: translateY(-4px); /* smooth lift */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 215, 0, 0.15); /* deep shadow + gold glow */
+  background: rgba(40, 40, 40, 0.75); /* slightly lighter on hover */
+}
+
+.modal-section:hover ul li,
+.modal-section:hover p {
+  color: #fff; /* brighten on hover */
+}
+.modal-section:hover h4 {
+    color: #FFD700;
+    text-shadow: 0 0 6px rgba(255, 215, 0, 0.3);
+}
+.modal-content p,
+.modal-content ul li {
+  text-align: justify; /* Aligns both left & right edges */
+  /*text-justify: inter-word; /* Distributes spacing evenly */
+  text-align-last: left; /* Keeps last line natural */
+  hyphens: auto; /* Smooth word breaks */
+  word-spacing: 0.02em; /* Tightens spacing slightly */
+  line-height: 1.55; /* Adds good line spacing */
+  letter-spacing: 0.01em; /* Subtle tightening for balance */
+  font-weight: 400; /* Clean standard weight */
+  margin: 6px 0; /* Gentle vertical rhythm */
+  transition: color 0.3s ease;
+}
+
+.modal-content li {
+  list-style-position: outside; /* Keeps bullet numbers aligned */
+  margin-left: 1.5em; /* Indent list items nicely */
+}
 .modal-content h3 {
   margin-top: 0;
   font-size: 1.5rem;
@@ -1186,7 +1229,7 @@ a:hover {
 .modal-content ul {
   margin-top: 8px;
   padding-left: 22px;
-  line-height: 1.7;
+  /*line-height: 1.7;*/
   color: #f0f0f0;
 }
 
