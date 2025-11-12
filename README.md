@@ -102,13 +102,13 @@ You can view the concept sketches below to see how each page came to life:
 
 <p align="center">
   <img src="assets/images/site/Landing.jpeg" alt="Landing Page Sketch" width="500"/><br>
-  <em>Landing, About Page Sketches — conceptualizing the book-inspired entry for the
+  <em>Landing, About, and Contact Page Sketches — conceptualizing the book-inspired entry for the
   landing and the thought process of settling for the best layout.</em>
 </p>
 
 <p align="center">
   <img src="assets/images/site/portfolio.jpeg" alt="Portfolio Page Sketch" width="500"/><br>
-  <em>Portfolio Page Sketch — early vision of the sticky note design and the project
+  <em>Portfolio Page Sketch — early vision of the sticky note design and the projects
   panels.</em>
 </p>
 
