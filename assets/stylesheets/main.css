@@ -1188,7 +1188,7 @@ a:hover {
   background: rgba(40, 40, 40, 0.75); /* slightly lighter on hover */
 }
 
-.modal-section:hover ul li,
+.modal-section:hover ol li,
 .modal-section:hover p {
   color: #fff; /* brighten on hover */
 }
@@ -1214,11 +1214,11 @@ a:hover {
 }
 */
 .modal-content p,
-.modal-content ul li {
-  text-align: justify; /* Aligns both left & right edges */
+.modal-content ul ol li {
+  /*text-align: justify; /* Aligns both left & right edges */
   /*text-justify: inter-word; /* Distributes spacing evenly */
   text-align-last: left; /* Keeps last line natural */
-  hyphens: auto; /* Smooth word breaks */
+  /*hyphens: auto; /* Smooth word breaks */
   word-spacing: 0.02em; /* Tightens spacing slightly */
   line-height: 1.55; /* Adds good line spacing */
   letter-spacing: 0.01em; /* Subtle tightening for balance */
@@ -1245,13 +1245,31 @@ a:hover {
   font-weight: 600;
 }
 
-.modal-content ul {
+.modal-content ol {
   margin-top: 8px;
   padding-left: 22px;
   /*line-height: 1.7;*/
   color: #f0f0f0;
+  list-style-type: lower-alpha;
+  list-style-position: outside; /* numbers outside text block */
 }
 
+/* Making numbering more elegant */
+.modal-content ol li::marker {
+    color: #d4af37; /* highlight the numbers */
+    font-weight: 600;
+}
+/* Glow effect on hover */
+.modal-content ol li:hover::marker {
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8), 0 0 15px rgba(255, 215, 0, 0.5);
+    color: #FFD700;
+}
+/* Slight text lift on hover: adds depth
+.modal-content ol li:hover {
+    transform: translateX(3px);
+    transition: all 0.3s ease;
+}
+*/
 /* ========== Close Button ========== */
 .close {
   position: absolute;
@@ -1351,5 +1369,88 @@ a:hover {
     margin: 20% auto;
     padding: 20px;
     font-size: 0.95rem;
+  }
+}
+/* ========================================
+   Mobile Responsiveness + Fluid Font Scaling
+   (Desktop/laptop styling untouched)
+   ======================================== */
+@media (max-width: 768px) {
+  html {
+    /* Smooth font scaling — only for smaller screens */
+    font-size: clamp(14px, 2.5vw + 0.4rem, 17px);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    padding: 0 10px;
+  }
+
+  h1 { font-size: clamp(1.4rem, 4vw, 1.9rem); }
+  h2 { font-size: clamp(1.2rem, 3.5vw, 1.6rem); }
+  h3 { font-size: clamp(1rem, 3vw, 1.4rem); }
+  h4 { font-size: clamp(0.95rem, 2.5vw, 1.2rem); }
+
+  p, li {
+    font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+    line-height: 1.7;
+  }
+
+  /* Containers: make them full-width on mobile */
+  .container,
+  .index-container,
+  .about-hero,
+  .contact-container,
+  .career-summary {
+    width: 95%;
+    margin-inline: auto;
+    padding: 16px;
+  }
+
+  /* Stack columns vertically */
+  .career-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .career-summary .column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Shrink modal a bit */
+  .modal-content {
+    width: 94%;
+    padding: 20px;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    overflow-y: auto;
+  }
+
+  /* Navigation wrap */
+  .about-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 0;
+  }
+
+  /* Sticky notes or card grids */
+  .sticky-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .profile-image img {
+    width: 100px;
+    height: 100px;
+    right: -20px;
+  }
+
+  /* Footer spacing */
+  .footer-nav a {
+    display: inline-block;
+    margin: 0 6px;
   }
 }

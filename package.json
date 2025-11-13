@@ -1,0 +1,16 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "**whoami** is a personal portfolio website that blends elegance with minimalism to showcase my technical and creative journey.   It serves as both a professional presentation and an experimental playground where design meets engineering.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "htmlhint": "^1.7.1",
+    "prettier": "^3.6.2"
+  }
+}
