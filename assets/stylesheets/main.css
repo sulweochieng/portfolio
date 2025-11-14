@@ -586,10 +586,12 @@ a:hover {
   .biodata {
     width: 100%;
     margin-bottom: 16px;
+    word-wrap: break-word;
   }
 
   .profile-image {
     width: auto;
+    order: 2;
     display: flex;
     justify-content: center;
   }
@@ -600,49 +602,6 @@ a:hover {
   }
 }
 
-/* ---- mobile: force stacking & wrapping ---- */
-@media (max-width: 600px) {
-  .about-intro {
-    gap: 15px;
-  }
-
-  .about-hero,
-  .socials {
-    width: 100%;
-    padding: 20px;
-  }
-
-  /* CRUCIAL: stack and center inside about-hero */
-  .about-hero {
-    display: flex !important;
-    flex-direction: column !important; /* stack vertically */
-    align-items: center !important;
-    text-align: center;
-  }
-
-  .biodata {
-    width: 100%;
-    margin: 0 0 12px 0;
-    overflow-wrap: anywhere; /* allow long words/emails to wrap */
-    word-break: break-word;
-    line-height: 1.4;
-  }
-
-  /* ensure the image is constrained and does not overflow */
-  .profile-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .profile-image img {
-    max-width: 150px;
-    width: 40%;
-    min-width: 100px;
-    height: auto;
-    display: block;
-  }
-}
 
 /*
   ========================================
