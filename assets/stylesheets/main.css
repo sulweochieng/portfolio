@@ -257,7 +257,7 @@ header {
   }
 
   .primary-nav a {
-    color: #d4af37; /* gold links */
+    /* color: #d4af37; gold links */
     font-weight: 600;
     transition: color 0.3s ease;
   }
@@ -316,7 +316,7 @@ header {
   color: #000;
 }
 
-/* Optional gentle pulse animation */
+/* gentle pulse animation */
 @keyframes goldPulse {
   0% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.4); }
   50% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.8); }
@@ -462,6 +462,7 @@ a:hover {
   /*width: 30%; */
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
+  border: 1px solid #d4af37;
   padding: 5px 10px;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -503,6 +504,7 @@ a:hover {
   align-items: center;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
+  border: 0.5px solid #d4af37;
   padding: 40px 30px;
   /*padding: 40px 80px 40px 30px;*/
   backdrop-filter: blur(10px);
@@ -544,7 +546,8 @@ a:hover {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid #d4af37;
+  /*border: 1px solid rgba(255, 255, 255, 0.5);*/
   box-shadow: 0 4px 8px rgba(0,0,0,0.25);
   margin: 0;
   padding: 0;
@@ -577,7 +580,17 @@ a:hover {
   .about-intro {
     gap: 15px;
   }
+  .biodata {
+    width: 100%;
+    word-wrap: break-word;
+  }
+  .profile-image img {
+    max-width: 150px;
+    height: auto;
+  }
 }
+
+
 /*
   ========================================
   Career Histrory
@@ -590,16 +603,17 @@ a:hover {
   margin-top: 60px;
   padding: 30px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  /* border-radius: 16px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  border-top: 0.5px solid #d4af37;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);*/
 }
-
 /* Each column */
 .career-summary .column {
   flex: 1;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 12px;
+  border: 0.5px solid #d4af37;
   padding: 20px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
@@ -679,7 +693,7 @@ a:hover {
   list-style: none;
   margin: 12px 0 0 18px;
   padding: 0;
-  border-left: 2px solid rgba(0, 0, 0, 0.1);
+  border-left: 0.3px solid #777;
 }
 
 .roles li {
@@ -966,6 +980,7 @@ a:hover {
 @media (prefers-color-scheme: dark) {
   .sticky { background: rgba(255, 248, 220, 0.95); }
 }
+
 /*
   ========================================
   Contanct     Contact   Contact
@@ -1449,10 +1464,32 @@ a:hover {
     height: 100px;
     right: -20px;
   }
+}
 
-  /* Footer spacing */
+@media (max-width: 600px) {
+  .primary-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 20px 0;
+  }
+
+  .primary-footer small {
+    order: 1;
+    font-size: 14px;
+  }
+
+  .footer-nav {
+    order: 2;
+    display: flex;
+    gap: 20px;
+  }
+
   .footer-nav a {
-    display: inline-block;
-    margin: 0 6px;
+    font-size: 14px;
+    text-decoration: none;
   }
 }
