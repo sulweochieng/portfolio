@@ -498,7 +498,7 @@ a:hover {
 .about-hero {
   flex: 1;
   /* width: 65%; */
-  /* position: relative; */
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -559,47 +559,6 @@ a:hover {
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-/* ---- existing breakpoint, tweaked ---- */
-@media (max-width: 992px) {
-  .about-intro {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .about-hero,
-  .socials {
-    width: 90%;
-  }
-
-  .about-hero {
-    padding: 30px 20px;
-    /* flex layout and wraps when needed */
-    display: flex;
-    flex-direction: column; /* stack by default on narrower tablet */
-    align-items: center;
-    text-align: center;
-  }
-
-  .biodata {
-    width: 100%;
-    margin-bottom: 16px;
-    word-wrap: break-word;
-  }
-
-  .profile-image {
-    width: auto;
-    order: 2;
-    display: flex;
-    justify-content: center;
-  }
-
-  .profile-image img {
-    max-width: 180px;
-    height: auto;
-  }
 }
 
 
@@ -1471,13 +1430,6 @@ a:hover {
     gap: 12px;
   }
 
-  .profile-image img {
-    width: 100px;
-    height: 100px;
-    right: -20px;
-  }
-}
-
 @media (max-width: 600px) {
   .primary-footer {
     display: flex;
@@ -1505,3 +1457,64 @@ a:hover {
     text-decoration: none;
   }
 }
+
+@media (max-width: 600px) {
+
+  /* Stack socials above about-hero */
+  .about-intro {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .socials,
+  .about-hero {
+    width: 90%;
+  }
+
+  /* About Hero Box */
+  .about-hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 20px 110px 20px;
+    overflow: visible; /* allow image to hang outside */
+    text-align: left;
+  }
+
+  /* Biodata layout */
+  .biodata {
+    width: 100%;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 12px;
+    word-break: break-word;
+  }
+
+  .biodata li { display: contents; }
+  .biodata strong { text-align: right; }
+
+  /* --- PERFECT DIAMETER OVERLAP FIX --- */
+  .profile-image {
+    position: absolute;
+    bottom: -60px; /* EXACT half the image height */
+    left: 50%;
+    top: auto;
+    right: auto;
+    transform: translateX(-50%);
+    margin: 0; /* ensure no extra offset */
+    padding: 0;
+    z-index: 5; /* above border */
+  }
+
+  .profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #d4af37;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    display: block;
+  }
+}}
