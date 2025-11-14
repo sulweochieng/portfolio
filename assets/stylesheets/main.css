@@ -462,7 +462,7 @@ a:hover {
   /*width: 30%; */
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-  border: 1px solid #d4af37;
+  /* border: 0.5px solid #d4af37;*/
   padding: 5px 10px;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -504,7 +504,7 @@ a:hover {
   align-items: center;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-  border: 0.5px solid #d4af37;
+ /* border: 0.5px solid #d4af37;*/
   padding: 40px 30px;
   /*padding: 40px 80px 40px 30px;*/
   backdrop-filter: blur(10px);
@@ -553,6 +553,15 @@ a:hover {
   padding: 0;
   background: rgba(255, 255, 255, 0.05);
 }
+
+/* sizing calculations include padding/border */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ---- existing breakpoint, tweaked ---- */
 @media (max-width: 992px) {
   .about-intro {
     flex-direction: column;
@@ -567,29 +576,73 @@ a:hover {
 
   .about-hero {
     padding: 30px 20px;
+    /* flex layout and wraps when needed */
+    display: flex;
+    flex-direction: column; /* stack by default on narrower tablet */
+    align-items: center;
+    text-align: center;
+  }
+
+  .biodata {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .profile-image {
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-image img {
+    max-width: 180px;
+    height: auto;
   }
 }
 
+/* ---- mobile: force stacking & wrapping ---- */
 @media (max-width: 600px) {
+  .about-intro {
+    gap: 15px;
+  }
+
   .about-hero,
   .socials {
     width: 100%;
     padding: 20px;
   }
 
-  .about-intro {
-    gap: 15px;
+  /* CRUCIAL: stack and center inside about-hero */
+  .about-hero {
+    display: flex !important;
+    flex-direction: column !important; /* stack vertically */
+    align-items: center !important;
+    text-align: center;
   }
+
   .biodata {
     width: 100%;
-    word-wrap: break-word;
+    margin: 0 0 12px 0;
+    overflow-wrap: anywhere; /* allow long words/emails to wrap */
+    word-break: break-word;
+    line-height: 1.4;
   }
+
+  /* ensure the image is constrained and does not overflow */
+  .profile-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   .profile-image img {
     max-width: 150px;
+    width: 40%;
+    min-width: 100px;
     height: auto;
+    display: block;
   }
 }
-
 
 /*
   ========================================
