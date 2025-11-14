@@ -1218,6 +1218,7 @@ a:hover {
 .modal-content li {
   list-style-position: outside; /* Keeps bullet numbers aligned */
   margin-left: 1.5em; /* Indent list items nicely */
+  margin-bottom: 10px;
 }
 .modal-content h3 {
   margin-top: 0;
