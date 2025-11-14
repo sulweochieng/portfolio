@@ -252,12 +252,12 @@ header {
     justify-content: center;
     gap: 12px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    /*border-bottom: 1px solid rgba(255, 215, 0, 0.4); */
+    border-bottom: 1px solid rgba(255, 215, 0, 0.4);
     padding: 10px 0;
   }
 
   .primary-nav a {
-    /* color: #d4af37; gold links */
+    color: #d4af37;
     font-weight: 600;
     transition: color 0.3s ease;
   }
@@ -299,7 +299,7 @@ header {
 .lets-talk-btn {
   display: inline-block;
   background-color: #d4af37; /* gold base */
-  color: #111;
+  color: #d4af37;
   padding: 10px 24px;
   border-radius: 8px;
   font-weight: 600;
