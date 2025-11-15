@@ -64,8 +64,8 @@ body {
 }
 .index-body {
   background-image: url("../images/site/BG.jpg");
-  background-size: cover;       /* makes image fill the page */
-  background-position: center;  /* centers the image */
+  background-size: cover; /* makes image fill the page */
+  background-position: center; /* centers the image */
   background-repeat: no-repeat; /* prevents tiling */
   background-attachment: fixed; /* makes it stay still while scrolling */
 }
@@ -290,15 +290,14 @@ header {
   margin-top: auto;
   padding-bottom: 20px;
   }
-
 }
 
 /* ================================
    Let's Talk Button Glow Effect
    ================================ */
-.lets-talk-btn {
+.btn-alt {
   display: inline-block;
-  background-color: #d4af37; /* gold base */
+  /* color: #fff; */
   color: #d4af37;
   padding: 10px 24px;
   border-radius: 8px;
@@ -310,10 +309,10 @@ header {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.lets-talk-btn:hover {
+.btn-alt:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
-  color: #000;
+  color: #ffcc33;
 }
 
 /* gentle pulse animation */
@@ -325,7 +324,7 @@ header {
 
 /* Activate pulse only on smaller screens (mobile-friendly highlight) */
 @media (max-width: 768px) {
-  .lets-talk-btn {
+  .btn-alt {
     animation: goldPulse 2.5s infinite ease-in-out;
   }
 }
@@ -1430,7 +1429,7 @@ a:hover {
     grid-template-columns: 1fr;
     gap: 12px;
   }
-
+}
 @media (max-width: 600px) {
   .primary-footer {
     display: flex;
@@ -1457,10 +1456,6 @@ a:hover {
     font-size: 14px;
     text-decoration: none;
   }
-}
-
-@media (max-width: 600px) {
-
   /* Stack socials above about-hero */
   .about-intro {
     flex-direction: column;
@@ -1518,4 +1513,33 @@ a:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.25);
     display: block;
   }
-}}
+  /* Applies to both inner and landing page navs */
+  .about-nav,
+  .primary-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 10px 15px;
+    margin: 10px auto;
+    width: 95%;
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid #d4af37;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+    top: 0;
+    position: sticky;
+    z-index: 1000;
+  }
+
+  /* Make links slightly smaller to prevent wrapping */
+  .about-nav a,
+  .primary-nav a {
+    font-size: 12px;
+    padding: 6px 8px;
+    white-space: nowrap; /* prevents line breaks */
+  }
+}
