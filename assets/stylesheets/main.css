@@ -1533,6 +1533,16 @@ a:hover {
     top: 0;
     position: sticky;
     z-index: 1000;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+  .primary-nav {
+      justify-content: space-between;
+      width: auto;
+      width: auto;
+      padding-right: 10px;
   }
 
   /* Make links slightly smaller to prevent wrapping */
@@ -1540,6 +1550,7 @@ a:hover {
   .primary-nav a {
     font-size: 12px;
     padding: 6px 8px;
+    flex-shrink: 0;
     white-space: nowrap; /* prevents line breaks */
   }
 }
