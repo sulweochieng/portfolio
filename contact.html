@@ -4,36 +4,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Sulwe - Contact</title>
+    
+    <!-- Link to your main CSS file (Paste the new CSS styles into this file) -->
     <link rel="stylesheet" href="assets/stylesheets/main.css">
+    
+    <!-- Font Awesome for Icons (Spinner/Checkmarks) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
     <script>
       (function() {
-        // Initialize EmailJS
         emailjs.init("NAj-hP1cBQwIVoVIo"); // public key
       })();
+
+      // 1. Regex Validation
+      function isValidEmail(email) {
+        // Checks for standard email format (text@domain.extension)
+        const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return re.test(String(email).toLowerCase());
+      }
+
+      // 2. Domain Typo Checker
+      function checkDomainTypos(email) {
+        const commonDomains = {
+            "gamil.com": "gmail.com",
+            "gmil.com": "gmail.com",
+            "gmal.com": "gmail.com",
+            "gmial.com": "gmail.com",
+            "hotmai.com": "hotmail.com",
+            "outlok.com": "outlook.com",
+            "yaho.com": "yahoo.com"
+        };
+        const domain = email.split('@')[1];
+        if (domain && commonDomains[domain]) {
+            return commonDomains[domain];
+        }
+        return null;
+      }
+
+      // 3. Toast Notification Logic
+      function showToast(message, type = 'success') {
+        const container = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        
+        const icon = type === 'success' ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-exclamation-circle"></i>';
+        
+        toast.className = `toast ${type}`;
+        toast.innerHTML = `${icon} <span>${message}</span>`;
+        
+        container.appendChild(toast);
+
+        // Remove after 3 seconds
+        setTimeout(() => {
+            toast.classList.add('hiding');
+            setTimeout(() => toast.remove(), 300);
+        }, 3000);
+      }
 
       function sendMail(event) {
         event.preventDefault();
 
         const btn = document.querySelector(".btn-alt");
+        const btnText = document.getElementById("btn-text");
+        const btnLoader = document.getElementById("btn-loader");
+        
+        const emailInput = document.getElementById("email");
+        const confirmInput = document.getElementById("confirm_email");
+        
+        const emailValue = emailInput.value.trim().toLowerCase();
+        const confirmValue = confirmInput.value.trim().toLowerCase();
+
+        // --- STEP 1: Format Validation ---
+        if (!isValidEmail(emailValue)) {
+            emailInput.classList.add("input-error");
+            showToast("Please enter a valid email address.", "error");
+            emailInput.focus();
+            return;
+        }
+
+        // --- STEP 2: Typo Check ---
+        const typo = checkDomainTypos(emailValue);
+        if (typo) {
+            // Ask user if they meant the corrected domain
+            if(confirm(`Did you mean ${emailValue.split('@')[0]}@${typo}?\nClick OK to correct it automatically.`)) {
+                emailInput.value = emailValue.split('@')[0] + "@" + typo;
+                confirmInput.value = emailInput.value;
+                return; // Stop here so they can review the change
+            }
+        }
+
+        // --- STEP 3: Match Validation ---
+        if (emailValue !== confirmValue) {
+            confirmInput.classList.add("input-error");
+            showToast("Email addresses do not match.", "error");
+            confirmInput.focus();
+            return;
+        }
+
+        // Reset errors if everything is good
+        emailInput.classList.remove("input-error");
+        confirmInput.classList.remove("input-error");
+
+        // --- STEP 4: Sending ---
         btn.disabled = true;
-        btn.textContent = "Sending...";
+        btnText.textContent = "Sending...";
+        if(btnLoader) btnLoader.classList.remove("hidden");
 
         emailjs.sendForm('service_bu10r3p', 'template_zydsjn8', event.target)
           .then(() => {
-            alert('Message sent successfully!');
+            showToast('Message sent successfully!', 'success');
             event.target.reset();
-            btn.disabled = false;
-            btn.textContent = "Send Message";
           })
           .catch((error) => {
             console.error('Error:', error);
-            alert('Something went wrong. Please try again later.');
+            showToast('Failed to send. Please try again later.', 'error');
+          })
+          .finally(() => {
             btn.disabled = false;
-            btn.textContent = "Send Message";
+            btnText.textContent = "Send Message";
+            if(btnLoader) btnLoader.classList.add("hidden");
           });
+      }
+
+      function clearError(input) {
+          input.classList.remove("input-error");
       }
     </script>
   </head>
@@ -47,8 +143,28 @@
       </section>
 
       <form class="contact-form" onsubmit="sendMail(event)">
+        
+        <!-- Email Field -->
         <label for="email">Your Email</label>
-        <input type="email" id="email" name="from_email" placeholder="you@example.com" required>
+        <input 
+            type="email" 
+            id="email" 
+            name="from_email" 
+            placeholder="you@example.com" 
+            oninput="clearError(this)"
+            required
+        >
+
+        <!-- NEW: Confirm Email Field -->
+        <label for="confirm_email">Confirm Email</label>
+        <input 
+            type="email" 
+            id="confirm_email" 
+            name="confirm_email_ignore" 
+            placeholder="Re-enter your email" 
+            oninput="clearError(this)"
+            required
+        >
 
         <label for="subject">Subject</label>
         <input type="text" id="subject" name="subject" placeholder="Let’s build something..." required>
@@ -56,7 +172,11 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
 
-        <button type="submit" class="btn btn-alt">Send Message</button>
+        <!-- Updated Button with Spinner -->
+        <button type="submit" class="btn btn-alt">
+            <i id="btn-loader" class="fas fa-spinner fa-spin hidden"></i>
+            <span id="btn-text">Send Message</span>
+        </button>
       </form>
 
       <footer class="contact-footer">
@@ -68,6 +188,10 @@
         </nav>
       </footer>
     </div>
+    
+    <!-- Toast Container (Required for notifications) -->
+    <div id="toast-container"></div>
+    
     <script src="assets/js/footer.js"></script>
   </body>
 </html>
